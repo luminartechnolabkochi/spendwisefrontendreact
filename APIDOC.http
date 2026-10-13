@@ -1,0 +1,48 @@
+
+
+#================user end points ============
+
+#api call for creating user account
+###
+POST  http://127.0.0.1:8000/accounts/signup/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "password1":"Password@123",
+    "password2":"Password@123",
+    "email":"django@gmail.com",
+    "phone":"7890986545"
+}
+
+
+#Api call for getting token 
+###
+POST http://127.0.0.1:8000/accounts/token/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "password":"Password@123"
+}
+
+
+#=======================Expense endpoints==============
+
+#api call for adding expense
+###
+POST http://127.0.0.1:8000/transactions/expenses/
+Content-Type: application/json
+Authorization: Token f63727e4f122d780cb539a7f79fdb6cb150ea073
+
+{
+    "title":"fuel in bike",
+    "amount":500,
+    "category":"travel"
+}
+
+#Api call for expense summary
+###
+GET  http://127.0.0.1:8000/transactions/expenses/summary/
+Accept: application/json
+Authorization: Token f63727e4f122d780cb539a7f79fdb6cb150ea073
