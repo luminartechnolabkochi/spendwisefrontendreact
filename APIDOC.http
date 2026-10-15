@@ -29,6 +29,20 @@ Content-Type: application/json
 
 #=======================Expense endpoints==============
 
+#api call for listing all exepnses
+####
+GET http://127.0.0.1:8000/transactions/expenses/
+Accept: application/json
+Authorization: Token f63727e4f122d780cb539a7f79fdb6cb150ea073
+
+#api call for delete exepense 
+###
+DELETE  http://127.0.0.1:8000/transactions/expenses/3/
+Accept: application/json
+Authorization: Token f63727e4f122d780cb539a7f79fdb6cb150ea073
+
+
+
 #api call for adding expense
 ###
 POST http://127.0.0.1:8000/transactions/expenses/

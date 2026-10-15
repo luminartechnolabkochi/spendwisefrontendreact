@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { signUpApi } from '../services/api';
+import { useNavigate } from 'react-router-dom';
 
 
 function SignUp() {
 
+        let redirect=useNavigate()
     const [user, setUser] = useState({ username: "", password1: "", password2: "", email: "", phone: "" })
 
 
@@ -13,6 +15,11 @@ function SignUp() {
         let response = await signUpApi(user)
         if(response.status>=200 && response.status<300){
             console.log(response.data);
+            redirect("/signin")
+            
+        }
+        else{
+            console.log(response);
             
         }
     }
