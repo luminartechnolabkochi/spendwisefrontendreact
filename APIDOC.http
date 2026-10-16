@@ -52,7 +52,9 @@ Authorization: Token f63727e4f122d780cb539a7f79fdb6cb150ea073
 {
     "title":"fuel in bike",
     "amount":500,
-    "category":"travel"
+    "category":"travel",
+    "priority":"need",
+    "notes":""
 }
 
 #Api call for expense summary
