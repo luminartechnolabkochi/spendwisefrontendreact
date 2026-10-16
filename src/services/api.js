@@ -47,3 +47,28 @@ export function deleteExpenseApi(id){
 
 
 }
+
+
+export function creatExpenseApi(payLoad){
+
+    let token = localStorage.getItem("token")
+    let headers={
+        "Content-Type":"application/json",
+        "Authorization":token
+    }
+
+    return axios.post("http://127.0.0.1:8000/transactions/expenses/",payLoad,{headers})
+
+}
+
+
+export function retrieveExpenseApi(id){
+
+     let token = localStorage.getItem("token")
+    let headers={
+        "Content-Type":"application/json",
+        "Authorization":token
+    }
+
+    return axios.get(`http://127.0.0.1:8000/transactions/expenses/${id}/`,{headers})
+}

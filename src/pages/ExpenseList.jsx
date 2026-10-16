@@ -40,8 +40,8 @@ function ExpenseList() {
           <p>{e.category}</p>
           <p>{e.priority}</p>
 
-          <Link>Detail</Link>
-          <Link>Update</Link>
+          <Link to={`/expense/${e.id}`}>Detail</Link>
+          <Link to={`/expense-update/${e.id}`}>Update</Link>
           <button onClick={()=>hadleDeleteButtonClick(e.id)}>Delete</button>
           <hr />
         </div>

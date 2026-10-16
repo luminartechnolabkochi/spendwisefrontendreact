@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { creatExpenseApi } from '../services/api'
+import { useNavigate } from 'react-router-dom'
+
 
 function ExpenseAdd() {
 
@@ -14,9 +17,16 @@ function ExpenseAdd() {
 
     const [expense,setExepense]=useState({title:"",amount:0,category:"",priority:"",notes:""})
 
-    function handleSubmit(event){
+    let redirect = useNavigate()
+
+   async  function handleSubmit(event){
         event.preventDefault()
-        console.log(expense);
+       
+        let response = await creatExpenseApi(expense)
+        if(response.status>=200 && response.status<300){
+
+            redirect("/expense-all")
+        }
         
     }
 

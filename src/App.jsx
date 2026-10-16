@@ -7,22 +7,26 @@ import SignIn from './pages/SignIn'
 import DashBoard from './pages/DashBoard'
 import ExpenseList from './pages/ExpenseList'
 import ExpenseAdd from './pages/ExpenseAdd'
+import ExpenseDetail from './pages/ExpenseDetail'
+import ExpenseUpdate from './pages/ExpenseUpdate'
 
 function App() {
   return (
-   <BrowserRouter>
-   <NavBar></NavBar>
-   
-    <Routes>
-      <Route path='/expense-add' element={<ExpenseAdd></ExpenseAdd>}></Route>
-      <Route path='/expense-all' element={<ExpenseList></ExpenseList>}></Route>
-      <Route path='/dashboard' element={<DashBoard></DashBoard>}></Route>
+    <BrowserRouter>
+      <NavBar></NavBar>
+
+      <Routes>
+        <Route path='/expense-update/:id' element={<ExpenseUpdate></ExpenseUpdate>}></Route>
+        <Route path='/expense-add' element={<ExpenseAdd></ExpenseAdd>}></Route>
+        <Route path='/expense/:id' element={<ExpenseDetail></ExpenseDetail>}></Route>
+        <Route path='/expense-all' element={<ExpenseList></ExpenseList>}></Route>
+        <Route path='/dashboard' element={<DashBoard></DashBoard>}></Route>
         <Route path='/register' element={<SignUp></SignUp>}></Route>
         <Route path='/signin' element={<SignIn></SignIn>}></Route>
         <Route path='' element={<Landing></Landing>}></Route>
 
-    </Routes>
-   </BrowserRouter>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
